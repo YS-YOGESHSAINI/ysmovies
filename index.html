@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <style>
+        body
+        {
+            background: -webkit-linear-gradient(#FF9933, #fff, #138808);
+            background-attachment: fixed;
+            /* font-family: system-ui; */
+        }
+      .header {
+        display: flex;
+        justify-content: center;
+      }
+      .header h1 {
+        font-size: 75px;
+        text-shadow: 2px 2px 5px #000;
+        color: #fff; 
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid blue;
+        border-radius: 20px;
+        margin: 8px;
+        align-items: center;
+        justify-content: center;
+      }
+      .card img {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        width: 250px;
+        height: auto;
+      }
+      .foot
+      {
+          display: flex;
+          justify-content: center;
+      }
+      .foot div
+      {
+          margin-left: 10px;
+          margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.6.3/tabletop.min.js"></script>
+    <!-- ***** header ***** -->
+    <div class="header">
+      <h1>THE YS MOVIES</h1>
+    </div>
+    <hr>
+    <marquee><p style="color:crimson;">** ⚠️ To watch 📺 or download ⬇️ these movies 🎥 first download play it app 📱 from play store **</p></marquee>
+    <hr>
+    <div class="row"></div>
+    <hr>
+    <!-- ***** footer ***** -->
+    <div class="foot">
+        <div>Google</div>
+        <div> twitter</div>
+    </div>
+    <script>
+      function init() {
+        Tabletop.init({
+          // key: "https://docs.google.com/spreadsheets/d/1nRwO5fCK5sks-aQe254HZ9XV7AoDozOI9l8fQHi55iU/edit?usp=sharing",
+          key: "https://docs.google.com/spreadsheets/d/1a-egYgdZxfpTlVu8-JufA-GguBOpbbEsa1pY6RP6yY4/edit?usp=sharing",
+          callback: showInfo,
+          simpleSheet: true,
+        });
+      }
+      function showInfo(data, tabletop) {
+        console.log(data);
+        for (var i = 0; i < data.length; i++) {
+          $(".row").append(
+            '<div class="card"><a href="' +
+              data[i].link +
+              '"><img src="' +
+              data[i].img +
+              '"></a><h1>' +
+              data[i].title +
+              "</h1>"
+          );
+        }
+      }
+      window.addEventListener("DOMContentLoaded", init);
+    </script>
+  </body>
+</html>
