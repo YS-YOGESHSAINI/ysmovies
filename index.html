@@ -1,12 +1,11 @@
 <html>
   <head>
     <style>
-        body
-        {
-            background: -webkit-linear-gradient(#FF9933, #fff, #138808);
-            background-attachment: fixed;
-            /* font-family: system-ui; */
-        }
+      body {
+        background: -webkit-linear-gradient(#ff9933, #fff, #138808);
+        background-attachment: fixed;
+        /* font-family: system-ui; */
+      }
       .header {
         display: flex;
         justify-content: center;
@@ -14,7 +13,7 @@
       .header h1 {
         font-size: 75px;
         text-shadow: 2px 2px 5px #000;
-        color: #fff; 
+        color: #fff;
       }
       .row {
         display: flex;
@@ -24,27 +23,50 @@
       .card {
         display: flex;
         flex-direction: column;
-        border: 2px solid blue;
+        /* border: 2px solid blue; */
         border-radius: 20px;
         margin: 8px;
         align-items: center;
-        justify-content: center;
+        width: 250px;
       }
       .card img {
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
+        border: 2px solid blue;
+        /* border-top-left-radius: 20px; */
+        /* border-top-right-radius: 20px; */
+        border-radius: 16px;
         width: 250px;
-        height: auto;
+        height: 370px;
       }
-      .foot
-      {
-          display: flex;
-          justify-content: center;
+      .foot {
+        display: flex;
+        justify-content: center;
       }
-      .foot div
+      .foot div {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      .foot .ftlt
       {
-          margin-left: 10px;
-          margin-right: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .foot .ftlt img
+      {
+        width: 100px;
+      }
+      .foot .ftlt button
+      {
+        margin-top: 5px;
+        color: chartreuse;
+        border-radius:25px;
+        border: none;
+        background: cyan;
+        font-size: 15px;
+      }
+      .foot .ftlt a
+      {
+        text-decoration: none;
       }
     </style>
   </head>
@@ -55,15 +77,23 @@
     <div class="header">
       <h1>THE YS MOVIES</h1>
     </div>
-    <hr>
-    <marquee><p style="color:crimson;">** ⚠️ To watch 📺 or download ⬇️ these movies 🎥 first download play it app 📱 from play store **</p></marquee>
-    <hr>
+    <hr />
+    <marquee
+      ><p style="color: crimson">
+        ** ⚠️ To watch 📺 or download ⬇️ these movies 🎥 first download play it
+        app 📱 from play store **
+      </p></marquee
+    >
+    <hr />
     <div class="row"></div>
-    <hr>
+    <hr />
     <!-- ***** footer ***** -->
     <div class="foot">
-        <div>Google</div>
-        <div> twitter</div>
+      <div class="ftlt">
+          <img src="https://play-lh.googleusercontent.com/XyRQ3Jjq4pSaAv0XtVnLcUPfkPDrRULoAhRUeOxR53xgxrGVR1Lde2UcnJgZvRFodyN4=s180-rw">
+          <button><a href="https://play.google.com/store/apps/details?id=com.playit.videoplayer&hl=en_IN&gl=US">Download</a></button>
+      </div>
+      <!-- <div>twitter</div> -->
     </div>
     <script>
       function init() {
@@ -82,9 +112,9 @@
               data[i].link +
               '"><img src="' +
               data[i].img +
-              '"></a><h1>' +
+              '"></a><h3>' +
               data[i].title +
-              "</h1>"
+              "</h3>"
           );
         }
       }
